@@ -1,0 +1,52 @@
+create table accountant (
+      id int primary key  auto_increment,
+     username varchar(20) not null unique,
+    password varchar(20) not null ,
+    gender varchar(1) not null,
+    state varchar(20) not null
+);
+
+Note: there is no permission for creating a accountant entry(accountant signup) through application.
+accountants can create customer account.accountant entries can be only created through direct SQL implentation.
+
+here some static entries to help:-
+
+insert into accountant( username,password,gender,state) values('Raju','12fg4','M','delhi');
+insert into accountant( username,password,gender,state) values('Sneha','34fdg6','F','delhi');
+insert into accountant( username,password,gender,state) values('Vikram','0gd11','M','Banglore');
+insert into accountant( username,password,gender,state) values('Ravi','3fg34','M','Haryana');
+
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| id       | int         | NO   | PRI | NULL    | auto_increment |
+| username | varchar(20) | NO   | UNI | NULL    |                |
+| password | varchar(20) | NO   |     | NULL    |                |
+| gender   | varchar(1)  | NO   |     | NULL    |                |
+| state    | varchar(20) | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+
+===========================================================================================
+
+ create table customer(
+  accountNo int primary key auto_increment,
+     username varchar(20) not null unique,
+    password varchar(20) not null ,
+    gender varchar(1) not null,
+    state varchar(20) not null,
+    Account_Balance int not null,
+    tansactio_history varchar(500) not null
+);
+alter table customer auto_increment=24565432;  (optional) [(24565432) or any value from which you want to start account number initialization ]
+
++---------------------+--------------+------+-----+---------+----------------+
+| Field               | Type         | Null | Key | Default | Extra          |
++---------------------+--------------+------+-----+---------+----------------+
+| accountNo           | int          | NO   | PRI | NULL    | auto_increment |
+| username            | varchar(20)  | NO   | UNI | NULL    |                |
+| password            | varchar(20)  | NO   |     | NULL    |                |
+| gender              | varchar(1)   | NO   |     | NULL    |                |
+| state               | varchar(20)  | NO   |     | NULL    |                |
+| Account_Balance     | int          | NO   |     | NULL    |                |
+| Transaction_History | varchar(500) | NO   |     | NULL    |                |
++---------------------+--------------+------+-----+---------+----------------+
